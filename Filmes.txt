@@ -1,0 +1,47 @@
+POST _bulk
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Harry Potter e a Pedra Filosofal", "sinopse": "Um garoto órfão descobre que é um bruxo famoso e enfrenta Voldemort em seu primeiro ano em Hogwarts.", "genero": "Fantasia", "ano": 2001, "capa": "https://upload.wikimedia.org/wikipedia/pt/1/1d/Harry_Potter_Pedra_Filosofal_2001.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Harry Potter e a Câmara Secreta", "sinopse": "Carros voadores, árvores que lutam e um elfo doméstico misterioso avisam Harry Potter para não retornar para seu segundo ano.", "genero": "Fantasia", "ano": 2002, "capa": "https://images.justwatch.com/poster/303437772/s718/harry-potter-e-a-camara-secreta.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Harry Potter e o Prisioneiro de Azkaban", "sinopse": "Harry descobre que o perigoso Sirius Black fugiu da prisão de Azkaban e está vindo atrás dele.", "genero": "Fantasia", "ano": 2004, "capa": "https://images.justwatch.com/poster/122046943/s718/harry-potter-e-o-prisioneiro-de-azkaban.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Vingadores: Ultimato", "sinopse": "Os heróis restantes tentam reverter as ações de Thanos e restaurar o equilíbrio do universo.", "genero": "Ação", "ano": 2019, "capa": "https://br.web.img3.acsta.net/pictures/19/04/26/17/30/2428965.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "O Senhor dos Anéis: A Sociedade do Anel", "sinopse": "Um humilde hobbit e seus companheiros partem em uma jornada para destruir o Um Anel e salvar a Terra-média.", "genero": "Fantasia", "ano": 2001, "capa": "https://images.justwatch.com/poster/240435521/s718/o-senhor-dos-aneis-a-sociedade-do-anel.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "O Poderoso Chefão", "sinopse": "A saga de uma família mafiosa italo-americana e a ascensão de seu filho relutante ao poder.", "genero": "Crime", "ano": 1972, "capa": "https://play-lh.googleusercontent.com/ooMpCgZK3ftSd8b5z8pob30iilVw2sUf6V9DQoWPRd4UlvWhT-PJIJMgJEojH3WjTXt4srbfzUuEYu72J-Q" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Interestelar", "sinopse": "Uma equipe de exploradores viaja através de um buraco de minhoca no espaço na tentativa de garantir a sobrevivência da humanidade.", "genero": "Sci-Fi", "ano": 2014, "capa": "https://upload.wikimedia.org/wikipedia/pt/thumb/3/3a/Interstellar_Filme.png/250px-Interstellar_Filme.png" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Cidade de Deus", "sinopse": "Nas favelas do Rio de Janeiro, os caminhos de dois jovens divergem enquanto um se esforça para se tornar fotógrafo e o outro se torna um chefe do tráfico.", "genero": "Crime", "ano": 2002, "capa": "https://upload.wikimedia.org/wikipedia/pt/thumb/1/10/CidadedeDeus.jpg/250px-CidadedeDeus.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Matrix", "sinopse": "Um hacker aprende com rebeldes misteriosos sobre a verdadeira natureza de sua realidade e seu papel na guerra contra seus controladores.", "genero": "Sci-Fi", "ano": 1999, "capa": "https://m.media-amazon.com/images/I/613ypTLZHsL._AC_UF894,1000_QL80_.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Batman: O Cavaleiro das Trevas", "sinopse": "Quando a ameaça conhecida como Coringa causa estragos e caos no povo de Gotham, Batman deve aceitar um dos maiores testes psicológicos.", "genero": "Ação", "ano": 2008, "capa": "https://upload.wikimedia.org/wikipedia/pt/d/d1/The_Dark_Knight.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Star Wars: Uma Nova Esperança", "sinopse": "Luke Skywalker une forças com um cavaleiro Jedi, um piloto arrogante e dois droides para salvar a galáxia da Estrela da Morte.", "genero": "Sci-Fi", "ano": 1977, "capa": "https://br.web.img2.acsta.net/medias/nmedia/18/91/98/26/20172772.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Toy Story", "sinopse": "Um boneco caubói se sente ameaçado e com ciúmes quando um novo brinquedo de astronauta toma seu lugar no quarto de Andy.", "genero": "Animação", "ano": 1995, "capa": "https://upload.wikimedia.org/wikipedia/pt/a/a7/Toy_Story_1995.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "O Rei Leão", "sinopse": "O príncipe leão Simba e seu pai são alvo de seu tio amargo, que quer ascender ao trono ele mesmo.", "genero": "Animação", "ano": 1994, "capa": "https://static.wikia.nocookie.net/disney/images/c/c7/Poster-rei-leao-full.jpeg/revision/latest?cb=20160925204728&path-prefix=pt-br" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Shrek", "sinopse": "Um ogro mal-humorado parte em uma jornada com um burro falante para resgatar uma princesa em troca de seu pântano.", "genero": "Animação", "ano": 2001, "capa": "https://cinema10.com.br/upload/featuredImage.php?url=https%3A%2F%2Fcinema10.com.br%2Fupload%2Ffilmes%2Ffilmes_1065_shrekaha.png" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Titanic", "sinopse": "Uma aristocrata de dezessete anos se apaixona por um artista pobre a bordo do luxuoso e infortunado R.M.S. Titanic.", "genero": "Romance", "ano": 1997, "capa": "https://m.media-amazon.com/images/I/811lT7khIrL._AC_UF894,1000_QL80_.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Pulp Fiction", "sinopse": "As vidas de dois assassinos da máfia, um boxeador e um par de bandidos se entrelaçam em quatro histórias de violência e redenção.", "genero": "Crime", "ano": 1994, "capa": "https://upload.wikimedia.org/wikipedia/pt/8/82/Pulp_Fiction_cover.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Forrest Gump", "sinopse": "As presidências de Kennedy e Johnson, a guerra do Vietnã e outros eventos históricos se desenrolam sob a perspectiva de um homem do Alabama.", "genero": "Drama", "ano": 1994, "capa": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Jurassic Park", "sinopse": "Um parque temático sofrendo uma falha de energia permite que seus dinossauros clonados corram soltos.", "genero": "Aventura", "ano": 1993, "capa": "https://preview.redd.it/nobody-does-it-better-jurrasic-park-v0-0m4qtktrnwbe1.jpeg?auto=webp&s=6e9c310e28b76097242f58e81abce4d2ab43ab8c" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Clube da Luta", "sinopse": "Um trabalhador de escritório insone e um fabricante de sabonetes formam um clube de luta clandestino.", "genero": "Drama", "ano": 1999, "capa": "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/95/96/20122166.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "It: A Coisa", "sinopse": "Um grupo de crianças intimidadas se une para destruir um monstro que muda de forma e se disfarça de palhaço.", "genero": "Terror", "ano": 2017, "capa": "https://br.web.img3.acsta.net/pictures/17/03/30/22/44/345288.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Se Beber, Não Case!", "sinopse": "Três padrinhos de casamento perdem o noivo durante uma despedida de solteiro em Las Vegas.", "genero": "Comédia", "ano": 2009, "capa": "https://play-lh.googleusercontent.com/vaUQFY-v9IkDclMcpqb2o3On9csvI1I4fl_wS7-IdoxdMkzClv3mtweZbon2Mpo_Zqddaw" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "Superbad: É Hoje", "sinopse": "Dois co-dependentes do ensino médio são forçados a lidar com a ansiedade da separação enquanto navegam em uma festa regada a álcool.", "genero": "Comédia", "ano": 2007, "capa": "https://m.media-amazon.com/images/M/MV5BNmIyMjRkZTMtYTE3Ny00YjEzLThiNmQtMGE3NGExNjgzMGUwXkEyXkFqcGc@._V1_.jpg" }
+{ "index" : { "_index" : "filmes" } }
+{ "titulo": "John Wick: De Volta ao Jogo", "sinopse": "Um ex-assassino de aluguel sai da aposentadoria para rastrear os gângsteres que mataram seu cachorro.", "genero": "Ação", "ano": 2014, "capa": "https://br.web.img3.acsta.net/pictures/14/10/27/20/07/170589.jpg" }
