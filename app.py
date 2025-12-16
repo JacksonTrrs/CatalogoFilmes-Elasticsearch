@@ -1,6 +1,20 @@
 import streamlit as st
 import backend as api  # Importamos o nosso arquivo de lógica
 
+# Lista padrão de gêneros para garantir consistência
+LISTA_GENEROS = [
+    "Ação",
+    "Aventura",
+    "Animação",
+    "Comédia",
+    "Crime",
+    "Drama",
+    "Fantasia",
+    "Romance",
+    "Sci-Fi",
+    "Terror"
+]
+
 # ==================================================
 # CONFIGURAÇÃO DA PÁGINA
 # ==================================================
@@ -15,32 +29,44 @@ st.markdown("Projeto acadêmico - Banco de Dados 2")
 # ==================================================
 
 def renderizar_sidebar():
-    """Renderiza a barra lateral com o formulário de adição."""
+    """Renderiza Filtros e Formulário de Adição."""
+    filtros_selecionados = []
+
     with st.sidebar:
+        # --- SEÇÃO DE FILTROS ---
+        st.header("🔍 Filtros")
+        st.write("Selecione os gêneros:")
+
+        # Cria um checkbox para cada gênero da lista
+        for genero in LISTA_GENEROS:
+            if st.checkbox(genero):
+                filtros_selecionados.append(genero)
+
+        st.divider()  # Linha visual para separar
+
+        # --- SEÇÃO DE CADASTRO ---
         st.header("Cadastrar Filme")
-        with st.form("form_add_filme"):
-            novo_titulo = st.text_input("Título")
-            novo_genero = st.selectbox("Gênero",
-                                       ["Ação", "Comédia", "Drama", "Terror", "Ficção Científica", "Animação"])
-            novo_ano = st.number_input("Ano de Lançamento", min_value=1900, max_value=2030, step=1)
-            nova_capa = st.text_input("URL da Imagem (Capa)")
-            nova_sinopse = st.text_area("Sinopse")
+        with st.expander("Abrir Formulário"):  # Usei expander para limpar a tela
+            with st.form("form_add_filme"):
+                novo_titulo = st.text_input("Título")
+                novo_genero = st.selectbox("Gênero", LISTA_GENEROS)  # Usa a mesma lista
+                novo_ano = st.number_input("Ano", min_value=1900, max_value=2030, step=1)
+                nova_capa = st.text_input("URL Capa")
+                nova_sinopse = st.text_area("Sinopse")
 
-            btn_salvar = st.form_submit_button("Salvar Filme")
+                btn_salvar = st.form_submit_button("Salvar")
 
-            if btn_salvar:
-                if novo_titulo and nova_sinopse:
-                    # Chama a função do backend
-                    sucesso, msg = api.adicionar_filme(novo_titulo, nova_sinopse, novo_genero, novo_ano, nova_capa)
-
-                    if sucesso:
-                        st.success(msg)
-                        # Dica: Pequeno delay e recarregar a página ajuda a ver o item novo
-                        # st.rerun()
+                if btn_salvar:
+                    if novo_titulo and nova_sinopse:
+                        sucesso, msg = api.adicionar_filme(novo_titulo, nova_sinopse, novo_genero, novo_ano, nova_capa)
+                        if sucesso:
+                            st.success(msg)
+                        else:
+                            st.error(msg)
                     else:
-                        st.error(msg)
-                else:
-                    st.warning("Preencha pelo menos Título e Sinopse.")
+                        st.warning("Preencha Título e Sinopse.")
+
+    return filtros_selecionados
 
 
 def renderizar_grid_filmes(resultados, termo_busca=None):
@@ -76,7 +102,7 @@ def renderizar_grid_filmes(resultados, termo_busca=None):
 # ==================================================
 
 # 1. Renderiza Barra Lateral
-renderizar_sidebar()
+categorias_filtro = renderizar_sidebar()
 
 # 2. Barra de Busca Principal
 col_a, col_b, col_c = st.columns([1, 3, 1])
@@ -85,11 +111,8 @@ with col_b:
 
 st.divider()
 
-# 3. Busca de Dados (Usando o Backend)
-if termo:
-    resultados = api.buscar_no_elastic(termo)
-else:
-    resultados = api.buscar_todos()
+# 3. Busca Inteligente (Texto + Filtros)
+resultados = api.buscar_com_filtros(termo, categorias_filtro)
 
 # 4. Exibição dos Resultados
 renderizar_grid_filmes(resultados, termo)

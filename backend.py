@@ -48,6 +48,45 @@ def buscar_todos():
     }
     return buscar_query(query_json)
 
+def buscar_com_filtros(termo_digitado, categorias_selecionadas):
+    #Realiza busca combinando texto (opcional) e filtros de categoria (opcional). Usa a query 'bool' do Elasticsearch.
+
+    # 1. Monta a parte de TEXTO (MUST)
+    if termo_digitado:
+        must_clause = {
+            "multi_match": {
+                "query": termo_digitado,
+                "fields": ["titulo^3", "sinopse"],
+                "fuzziness": "AUTO"
+            }
+        }
+    else:
+        # Se não digitou nada, traz tudo
+        must_clause = {"match_all": {}}
+
+    # 2. Monta a parte de FILTRO (FILTER)
+    filter_clause = []
+    if categorias_selecionadas:
+        # 'terms' busca qualquer filme que tenha UMA das categorias da lista.
+        filter_clause.append({
+            "terms": {
+                "genero": categorias_selecionadas
+            }
+        })
+
+    # 3. Monta a Query Final
+    query_json = {
+        "size": 50,
+        "query": {
+            "bool": {
+                "must": must_clause,
+                "filter": filter_clause
+            }
+        }
+    }
+
+    return buscar_query(query_json)
+
 def adicionar_filme(titulo, sinopse, genero, ano, capa):
     """Envia um POST para adicionar um novo filme."""
     filme_doc = {
