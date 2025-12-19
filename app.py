@@ -112,7 +112,7 @@ with col_b:
 st.divider()
 
 # 3. Busca Inteligente (Texto + Filtros)
-resultados = api.buscar_com_filtros(termo, categorias_filtro)
+resultados = api.buscar_filmes(termo, categorias_filtro)
 
 # 4. Exibição dos Resultados
 renderizar_grid_filmes(resultados, termo)
